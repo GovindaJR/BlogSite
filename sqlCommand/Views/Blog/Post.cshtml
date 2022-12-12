@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewData["Title"] = "Post";
+}
+
+<h1>@ViewBag.post.Title</h1>
+<h5>By: @ViewBag.post.Author</h5>
+<h6>Posted on: @ViewBag.post.Date.ToShortDateString()</h6>
+
+
+<div>
+    <p style="white-space: pre-line">@ViewBag.post.Body</p>
+</div>
+<br />
+<div> 
+    <a asp-action="Index">Back to Blogs</a>
+</div>

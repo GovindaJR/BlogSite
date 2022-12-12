@@ -1,0 +1,64 @@
+﻿@model List<Post>
+@addTagHelper*, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "IndexView";   
+}
+
+@if(TempData["AlertMessage"] != null)
+{
+    <div class="alert alert-success">
+        <strong>Success! </strong>@TempData["AlertMessage"]
+    </div>
+}
+
+
+
+<h1 class="center-text">Blogs</h1> 
+
+<div class="center-text">
+    <button style="background-color: #04AA6D; color: white; margin: 20px;font-size: 17px;border-radius: 5px;" type="button" onclick="location.href='@Url.Action("Create","Blog")'">+ Add Post</button>
+</div>
+
+<div class="center-text">
+    <form asp-controller="Blog">
+        <span style="display: inline; margin: 20px">
+            <h3>Want to be notified about new posts? Enter your email below!</h3>
+        </span>
+
+        <input type="email" data-val="true"
+               data-val-email="The Email Address field is not a valid email address."
+               data-val-required="The Email Address field is required."
+               id="Email" name="Email" placeholder="Enter Email"/>
+
+            <button type="submit">Submit</button>
+    </form>
+</div>
+
+<hr/>
+
+    <table>
+    @foreach (var post in Model)
+    {
+        <tr>
+            <td>
+                <strong style="color:brown; font-size: large">@post.Title</strong>
+            </td>
+        </tr>
+         <tr>
+            <td>
+               <a asp-action="Post" asp-route-id="@post.ID">Read Full Post</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>By: @post.Author </span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Date Posted: @post.Date.ToShortDateString() </p>
+            </td>
+        </tr>
+    }
+    </table>
