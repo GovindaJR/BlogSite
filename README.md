@@ -4,7 +4,7 @@ Blog Site with notifications using Observer Pattern. Users can create blogs post
 The application is written using the ASP.NET framework written in C# and uses the Model-View-Controller pattern to separate business logic from the display. 
 
 # UML Diagram
-![image](https://user-images.githubusercontent.com/62119685/207077291-f8a17b73-6470-4fd2-a689-6b8c60853591.png)
+![image](https://user-images.githubusercontent.com/62119685/207088284-f5b89bb7-ea90-47b8-8f8b-f0bc723f51c5.png)
 
 
 # Need to be Implemented
