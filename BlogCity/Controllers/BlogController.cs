@@ -63,6 +63,7 @@ namespace BlogCity.Controllers
             try
             {         
                 Post post = new Post(collection["Title"], collection["Body"], collection["Author"]);
+                Console.WriteLine($"{post.Title} {post.Body} {post.Author}");
                 blog.addPost(post);
                 blog.notifyRecipients(post);          
                 return RedirectToAction(nameof(Index));

@@ -7,7 +7,7 @@ using BlogCity;
 
 namespace BlogCity.Models
 {
-    public class Blog
+    public class Blog: NotificationManager
     {
         List<Post> posts;
         List<Recipient> recipients;
